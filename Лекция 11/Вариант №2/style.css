@@ -1,0 +1,19 @@
+.to-do {
+    background-color: yellow;
+}
+
+.done {
+    background-color: green;
+}
+
+.remove-button {
+    float: right;
+}
+
+#taskList {
+    width: 450px;
+}
+
+li {
+    margin: 20px 20px 20px 20px;
+}
