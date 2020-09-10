@@ -1,6 +1,6 @@
 ﻿const person = {name: 'Alex', surname:'Smith', phone: '+380 00 000 00 0'};
 
-
+/*
 function createTemplate(stringTemplate){
     return function(object) {
         let expression = stringTemplate;
@@ -9,6 +9,17 @@ function createTemplate(stringTemplate){
         return expression;
     }
 }
+*/
+
+function createTemplate(stringTemplate){
+    return function(object) {
+        let expression = stringTemplate;
+        Object.keys(object).forEach((key) => 
+            (expression = expression.replace('{{' + key + '}}', object[key])));
+        return expression;
+    }
+}
+
 
 
 const helloTemplate  = createTemplate('Hello, {{name}} {{name}}');
