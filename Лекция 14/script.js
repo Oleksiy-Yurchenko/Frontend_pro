@@ -10,8 +10,7 @@ Student.prototype.averageMark = function() {
 }
 
 
-const john = new Student('John', [10, 9, 10, 9]);
-const anna = new Student('Anna', [10, 8, 7, 9]);
+students = [new Student('John', [10, 9, 10, 9]), new Student('Anna', [10, 8, 7, 9])]
 
-alert(john.averageMark());
-alert(anna.averageMark());
+alert(students[0].averageMark());
+alert(students[1].averageMark());
