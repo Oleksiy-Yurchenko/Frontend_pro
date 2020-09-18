@@ -31,18 +31,19 @@ class Accordeon {
         this._container.addEventListener('click', (event) => {
             let parentEl = event.target.parentNode;
             if (event.target.classList.contains(Accordeon.TITLE_CLASS)) {
-                if (parentEl.classList.contains(Accordeon.VISIBLE_CLASS)){
-                    this.toggleItem(parentEl);
-                } else {
-                    this.classReset();
-                    this.toggleItem(parentEl);                                               
-                }            
+               this.toggleItem(parentEl);
             }
         });
     }           
 
     toggleItem(el) {
-        el.classList.toggle(Accordeon.VISIBLE_CLASS);
+        if (el.classList.contains(Accordeon.VISIBLE_CLASS)){
+             this.toggleClass(el);
+        } else {
+             this.classReset();
+             this.toggleClass(el);                                            
+        }
+                   
     }
 
     classReset() {
@@ -50,5 +51,9 @@ class Accordeon {
         for (let i = 0; i < itemClassElements.length; i++) {
             itemClassElements[i].classList.remove(Accordeon.VISIBLE_CLASS);            
         }
+    }
+
+    toggleClass(el) {
+        el.classList.toggle(Accordeon.VISIBLE_CLASS);
     }
 }
