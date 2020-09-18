@@ -1,4 +1,4 @@
-﻿Hamburger.SIZE_SMALL = 'small';
+﻿Hamburger.SIZE_SMALL = {price: 50, calories: 20};
 Hamburger.SIZE_MEDIUM = 'medium';
 Hamburger.SIZE_LARGE = 'large';
 Hamburger.TOPPING_CHEESE = 'cheese';
