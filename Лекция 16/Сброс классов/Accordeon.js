@@ -29,12 +29,13 @@ class Accordeon {
 
     bindEventListener() {
         this._container.addEventListener('click', (event) => {
+            let parentEl = event.target.parentNode;
             if (event.target.classList.contains(Accordeon.TITLE_CLASS)) {
-                if (event.target.parentNode.classList.contains(Accordeon.VISIBLE_CLASS)){
-                    event.target.parentNode.classList.toggle(Accordeon.VISIBLE_CLASS);
+                if (parentEl.classList.contains(Accordeon.VISIBLE_CLASS)){
+                    this.toggleItem(parentEl);
                 } else {
                     this.classReset();
-                    this.toggleItem(event.target.parentNode);                                               
+                    this.toggleItem(parentEl);                                               
                 }            
             }
         });
