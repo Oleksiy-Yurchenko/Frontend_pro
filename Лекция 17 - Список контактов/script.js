@@ -20,7 +20,10 @@ function onAddContactClick(event){
 }
 
 function onRemoveButtonClick(event) {
-    removeContact(event);
+    if (event.target.classList.contains(DELETE_BTN_CLASS)){
+        deleteContact(event.target.parentElement.parentElement);
+        saveData();
+    }
 }
 
 function init(){
@@ -29,8 +32,8 @@ function init(){
 }
 
 function submitContact(){
-    if (!(nameInput.value && phoneInput.value && emailInput.value)) {
-        alert('Please fill all of the fields!');
+    if (validateInput()) {
+        alert('Please fill all the fields!');        
     } else {
         const contactItem = {
             id: Date.now(),
@@ -40,14 +43,11 @@ function submitContact(){
         }
         addContact(contactItem);
         clearInput();
-    }    
+    }  
 }
 
-function removeContact(event){
-    if (event.target.classList.contains(DELETE_BTN_CLASS)){
-        deleteContact(event.target.parentElement.parentElement);
-        saveData();
-    }
+function validateInput(){
+    return !(nameInput.value && phoneInput.value && emailInput.value);
 }
 
 function deleteContact(el) {
