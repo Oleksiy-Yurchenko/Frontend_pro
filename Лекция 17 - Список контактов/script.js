@@ -30,7 +30,7 @@ function init(){
 
 function submitContact(){
     if (!(nameInput.value && phoneInput.value && emailInput.value)) {
-        alert('Please fill all of the required fields!');
+        alert('Please fill all of the fields!');
     } else {
         const contactItem = {
             id: Date.now(),
