@@ -1,0 +1,37 @@
+h2 {
+    text-align:center;
+}
+
+.col-1 { 
+    width: 33%; 
+} 
+
+.col-2 { 
+    width: 33%; 
+} 
+
+.col-3 { 
+    width: 24%; 
+} 
+
+.col-4 { 
+    width: 10%;
+    text-align: center; 
+} 
+
+.mx-auto{
+    text-align: center;
+    background-image: url("./images/trash.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1em;
+    width: 1em;
+}
+
+.name-col {
+    width: 100px;
+}
+
+.btn {
+    margin-left: 250px;
+}
