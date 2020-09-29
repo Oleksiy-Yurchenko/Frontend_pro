@@ -9,15 +9,10 @@ const albumListEntryTemplate = document.getElementById('albumListEntryTemplate')
 const photoCardTemplate = document.getElementById('photoCardTemplate').innerHTML;
 
 
-init(); 
+getAlbumsData();
 
 albumsListEl.addEventListener('click', onAlbumClick);
 
-
-function init(){
-    getAlbumsData();
-    renderDefaultAlbum(DEFAULT_ALBUM_INDEX);
-}
 
 function onAlbumClick(event){
     removePhotos();
@@ -27,15 +22,12 @@ function onAlbumClick(event){
 function getAlbumsData(){
     fetch(ALBUMS_URL)
     .then((res) => res.json())
-    .then((data) => renderAlbumsList(data));
-}
-
-function renderDefaultAlbum(DEFAULT_ALBUM_INDEX){
-    fetch(ALBUMS_URL)
-    .then((res) => res.json())
-    .then((data) => (data[DEFAULT_ALBUM_INDEX].id))
-    .then((data) => generatePhotosURL(data))
-    .then((data) => getPhotos(data));
+    .then((data) => {
+        renderAlbumsList(data);
+        return data[DEFAULT_ALBUM_INDEX].id;
+    })
+    .then((id) => generatePhotosURL(id))
+    .then((url) => getPhotos(url));
 }
 
 function renderAlbumsList(albumsList) {
@@ -79,6 +71,3 @@ function renderPhoto(photo){
 function generatePhotosURL(albumId){
     return PHOTOS_URL + QUERY_PARAMETER_TEMPLATE + albumId;
 }
-
-
-
