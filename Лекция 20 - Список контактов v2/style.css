@@ -1,0 +1,48 @@
+h2 {
+    text-align:center;
+}
+
+.col-1 { 
+    width: 33%; 
+} 
+
+.col-2 { 
+    width: 33%; 
+} 
+
+.col-3 { 
+    width: 24%; 
+} 
+
+.col-4 { 
+    width: 10%;
+    text-align: center; 
+} 
+
+.del-btn {
+    background-position: right;
+    background-image: url("./images/trash.svg");
+    background-repeat: no-repeat;
+    height: 1em;
+    width: 1em;
+}
+
+.edit-btn {
+    background-position: left;
+    background-image: url("./images/pencil.svg");
+    background-repeat: no-repeat;
+    height: 1em;
+    width: 1em;
+}
+
+.ml-2 {
+    margin-left: ($spacer * .5) !important;
+}
+
+.mt-2 {
+    margin-top: ($spacer * .5) !important;
+}
+
+.card {
+    height: 360px;
+}
