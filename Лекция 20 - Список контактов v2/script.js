@@ -37,6 +37,7 @@ function onSaveContactClick(e) {
     e.preventDefault();
     if (contactToEdit) {
         deleteContact(contactToEdit.id);
+        contactToEdit = {};
     }
     submitContact();
     clearInputs();
