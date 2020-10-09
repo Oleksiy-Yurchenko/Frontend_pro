@@ -1,0 +1,16 @@
+.card {
+    height: 200px;
+    float: left;
+}
+
+.header {
+    background-color: black;
+    height: 48px;
+}
+
+.card-header {
+    height: 42px;
+    text-align: right;
+}
+
+
