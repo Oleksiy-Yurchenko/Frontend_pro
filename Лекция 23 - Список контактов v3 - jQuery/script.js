@@ -199,4 +199,3 @@
         $phoneInput.val('');
     }
 })
-

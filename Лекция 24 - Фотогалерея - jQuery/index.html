@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Лекция 24 - Фотогалерея - jQuery</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/blueimp-gallery.min.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" aria-label="image gallery" aria-modal="true" role="dialog">
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <a
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></a>
+  <a
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></a>
+  <a
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></a>
+  <a
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></a>
+  <ol class="indicator"></ol>
+  </div>
+  <div id="links"></div>
+  <script type="text/template" id="photoTemplate">
+    <a href={{url}} title={{title}}>
+      <img src={{thumbnailUrl}} alt={{alt}}/>
+    </a>
+  </script>
+  <script src="js/blueimp-gallery.min.js"></script>
+  <script>
+    document.getElementById('links').onclick = function (event) {
+      event = event || window.event
+      var target = event.target || event.srcElement
+      var link = target.src ? target.parentNode : target
+      var options = { index: link, event: event }
+      var links = this.getElementsByTagName('a')
+      blueimp.Gallery(links, options)
+    }
+  </script>
+</body>
+</html>
