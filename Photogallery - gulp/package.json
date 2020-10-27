@@ -1,0 +1,27 @@
+{
+  "name": "photogallery-gulp",
+  "version": "1.0.0",
+  "description": "Photogallery with blueImp plugin and gulp",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oleksiy Yurchenko",
+  "license": "MIT",
+  "dependencies": {
+    "blueimp-gallery": "^3.3.0",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0"
+  }
+}

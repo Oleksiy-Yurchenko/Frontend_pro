@@ -1,0 +1,5 @@
+[1025/211745.365:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1025/231944.769:ERROR:process_info.cc(359)] UncheckedAllocate
+[1025/231944.801:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\oleks\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\47edb11c-8610-4644-89f6-1ed41028b5c0: Системе не удается найти указанный путь. (0x3)
+[1025/231945.711:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: Операция успешно завершена. (0x0)
+[1025/231946.021:ERROR:process_info.cc(359)] UncheckedAllocate
