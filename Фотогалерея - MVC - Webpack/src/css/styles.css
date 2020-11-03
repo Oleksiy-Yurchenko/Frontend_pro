@@ -1,0 +1,15 @@
+h2 {
+    text-align:center;
+}
+
+.ml-2 {
+    margin-left: ($spacer * .5) !important;
+}
+
+.mt-2 {
+    margin-top: ($spacer * .5) !important;
+}
+
+.card {
+    height: 360px;
+}
