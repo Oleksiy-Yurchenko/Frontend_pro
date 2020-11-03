@@ -10,7 +10,7 @@ export default class GalleryController{
         this.$container = $('.container');
                 
         this.albumsListView = new AlbumsListView({
-            onAlbumClick: (id) => this.renderAlbum(id),
+            onAlbumClick: (id) => this.processAlbum(id),
         });
         this.$container.append(this.albumsListView.$el);
 
@@ -25,10 +25,10 @@ export default class GalleryController{
 
         this.albumPhotosCollection = new AlbumPhotosCollection();
 
-        this.renderAlbum(DEFAULT_ALBUM_INDEX);
+        this.processAlbum(DEFAULT_ALBUM_INDEX);
     }  
     
-    renderAlbum(id){
+    processAlbum(id){
         this.albumPhotosCollection.getPhotosList(id)
         .then(() => {
             this.albumPhotosView.renderAlbumPhotos(this.albumPhotosCollection.photosList)
