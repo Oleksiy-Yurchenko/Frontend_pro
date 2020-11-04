@@ -5,6 +5,7 @@ export default class AlbumsCollection{
         console.log('Albums collection created');
 
         this.albumsList = [];
+
     }
 
     getAlbumsList(){
@@ -13,3 +14,4 @@ export default class AlbumsCollection{
             .then((data) => this.albumsList = data);
     }
 }
+

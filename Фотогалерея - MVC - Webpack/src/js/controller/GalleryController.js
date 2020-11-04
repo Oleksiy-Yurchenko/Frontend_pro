@@ -2,7 +2,6 @@ import AlbumsListView from '../view/AlbumsListView';
 import AlbumPhotosView from '../view/AlbumPhotosView';
 import AlbumsCollection from '../model/AlbumsCollection';
 import AlbumPhotosCollection from '../model/AlbumPhotosCollection';
-import {DEFAULT_ALBUM_INDEX} from '../config';
 import $ from 'jquery';
 
 export default class GalleryController{
@@ -18,14 +17,13 @@ export default class GalleryController{
         this.$container.append(this.albumPhotosView.$el);
 
         this.albumsCollection = new AlbumsCollection();
-        this.albumsCollection.getAlbumsList()
-            .then(() => {
-                this.albumsListView.renderAlbumsList(this.albumsCollection.albumsList)
-            });
-
         this.albumPhotosCollection = new AlbumPhotosCollection();
 
-        this.processAlbum(DEFAULT_ALBUM_INDEX);
+        this.albumsCollection.getAlbumsList()
+            .then(() => {
+                this.albumsListView.renderAlbumsList(this.albumsCollection.albumsList);
+                return this.processAlbum(this.albumsCollection.albumsList[0].id);
+            });
     }  
     
     processAlbum(id){
