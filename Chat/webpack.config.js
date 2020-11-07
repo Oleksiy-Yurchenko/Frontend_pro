@@ -10,14 +10,6 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
     },
-    module: {
-        rules: [
-            {
-            test: /\.css$/i,
-            use: ['style-loader', 'css-loader'] 
-        },
-    ]
-    },
     plugins: [
         new HtmlWebpackPlugin({template: './src/index.html'})
     ],
